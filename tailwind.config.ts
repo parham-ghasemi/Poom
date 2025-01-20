@@ -11,7 +11,8 @@ const config: Config = {
   	extend: {
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-  			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+  			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        hero: "url('/images/hero-background.png')"
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -25,6 +26,9 @@ const config: Config = {
         },
         blue: {
           1: '#0e78f9'
+        },
+        sky: {
+          1: '#c9ddff',
         },
 
   			background: 'hsl(var(--background))',
