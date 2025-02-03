@@ -79,7 +79,7 @@ const CallList = ({ type }: { type: 'upcoming' | 'ended' | 'recordings' }) => {
             icon={
               type === 'ended' ? '/icons/previous.svg' : type === 'upcoming' ? '/icons/upcoming.svg' : '/icons/recordings.svg'
             }
-            title={(meeting as Call).state?.custom.description.substring(0, 26) || (meeting as CallRecording).filename.substring(0, 26) || 'No description'}
+            title={(meeting as Call).state?.custom?.description?.substring(0, 26) || (meeting as CallRecording).filename?.substring(0, 26) || 'No description'}
             date={(meeting as Call).state?.startsAt?.toLocaleString() || (meeting as CallRecording).start_time.toLocaleString()}
             isPreviousMeeting={type === 'ended'}
             buttonIcon={type === 'recordings' ? '/icons/play.svg' : undefined}

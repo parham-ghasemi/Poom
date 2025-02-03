@@ -9,6 +9,7 @@ import { useUser } from "@clerk/nextjs"
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk"
 import { useToast } from "@/hooks/use-toast"
 import { Textarea } from "./ui/textarea"
+import { Input } from "./ui/input"
 import ReactDatePicker from "react-datepicker";
 
 const MeetingTypeList = () => {
@@ -95,6 +96,25 @@ const MeetingTypeList = () => {
         color='bg-yellow-1'
         onClick={() => router.push('/recordings')}
       />
+
+      <MeetingModal
+        isOpen={meetingState === 'isJoiningMeeting'}
+        onClose={() => setMeetingState(undefined)}
+        title="Paste the link here:"
+        className="text-center"
+        buttonText="Join"
+        handleClick={() => {
+          router.push(values.link)
+        }}
+      >
+        <Input
+          placeholder="Meeting Link..."
+          className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+          onChange={(e) => {
+            setValues({ ...values, link: e.target.value })
+          }}
+        />
+      </MeetingModal>
 
       {
         !callDetails ? (
