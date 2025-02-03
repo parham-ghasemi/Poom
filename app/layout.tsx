@@ -33,6 +33,9 @@ export default function RootLayout({
           colorInputBackground: '#252a41',
           colorInputText: '#fff',
           colorNeutral: '#fff'
+        },
+        layout: {
+          unsafe_disableDevelopmentModeWarnings: true
         }
       }}
     >
